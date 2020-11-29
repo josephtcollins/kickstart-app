@@ -40,7 +40,7 @@ contract Campaign {
         _;
     }
     
-    constructor(uint minimum, address creator) public {
+    function Campaign(uint minimum, address creator) public {
         manager = creator;
         minimumContribution = minimum;
     }
