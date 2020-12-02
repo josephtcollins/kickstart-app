@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import factory from '../ethereum/factory';
 
-function CampaignIndex() {
-  useEffect(() => {
-    async function fetchData() {
-      const campaigns = await factory.methods.getDeployedCampaigns().call();
-      console.log(campaigns);
-    }
-    fetchData();
-  })
+const CampaignIndex = (props) => {
+  return <div>{props.campaigns[0]}</div>
+}
 
-
-  return <div>This is campaign list page</div>
+CampaignIndex.getInitialProps = async () => {
+  const campaigns = await factory.methods.getDeployedCampaigns().call();
+  return { campaigns };
 }
 
 export default CampaignIndex;
