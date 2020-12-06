@@ -22,7 +22,6 @@ const CampaignNew = (props) => {
   const [minContribution, setMinContribution] = useState(0);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  console.log(errorMessage);
 
   return (
     <Layout>
